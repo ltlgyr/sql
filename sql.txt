@@ -1,0 +1,53 @@
+1.创建数据库；
+CREATE DATABASE test_db;
+CREATE DATABASE IF NOT EXISTS test_db;
+
+2.显示数据库：
+show databases;
+
+3.使用数据库；
+use edxapp_csmh;
+
+4.创建数据表：
+CREATE TABLE test_tb ( id INT(11),name VARCHAR(25), deptid INT (11));
+CREATE TABLE IF NOT EXISTS `test_tb` test_tb ( id INT(11),name VARCHAR(25), deptid INT (11));
+create table account ( userid int(11) NOT NULL AUTO_INCREMENT primary key, username VARCHAR(80), password VARCHAR(60), email VARCHAR(80));
+  4.b 复合主键
+  CREATE TABLE t1(
+    id int not null,
+    name char(20),
+    primary key (id,name)
+  );
+  4.c 带默认值的：
+   CREATE TABLE t1(
+    id int not null default 0 primary key,
+    name char(20) default '1'
+   );
+
+5.显示表；
+show tables;
+
+6.查看表结构：
+describe test_tb;
+SHOW CREATE TABLE test_tb;
+
+7. 创建索引
+create index indexName ON mytable (username(length));
+
+8. 添加字段
+ALTER TABLE <表名> [修改选项]
+ADD COLUMN <列名> <类型>
+| CHANGE COLUMN <旧列名> <新列名> <新列类型>
+| ALTER COLUMN <列名> { SET DEFAULT <默认值> | DROP DEFAULT }
+| MODIFY COLUMN <列名> <类型>
+| DROP COLUMN <列名>
+| RENAME TO <新表名> }
+ALTER table account ADD COLUMN  path VARCHAR(30) ;
+
+9.插入数据：
+INSERT INTO test_tb (id, deptid) value (4,-97),(4,-97);
+
+10.查询；
+select * from test_tb ;
+select id from test_tb;
+
