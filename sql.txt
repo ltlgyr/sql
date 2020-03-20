@@ -51,3 +51,6 @@ INSERT INTO test_tb (id, deptid) value (4,-97),(4,-97);
 select * from test_tb ;
 select id from test_tb;
 
+11.删除数据：
+delete from test_tb where id=4;
+
